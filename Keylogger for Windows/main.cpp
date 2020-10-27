@@ -1,8 +1,16 @@
 #include <iostream>
+#include <windows.h>
 
 using namespace std;
 
 int main() {
-	cout << "hello world";
+
+	MSG Msg;
+
+	while (GetMessage (&Msg, NULL, 0, 0))
+	{
+		TranslateMessage(&Msg);
+		DispatchMessage(&Msg);
+	}
 	return 0;
 }
