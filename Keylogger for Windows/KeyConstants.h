@@ -7,8 +7,17 @@
 
 class KeyPair {
 public:
-	KeyPair	(const std::string &vk = "", const std::string &name = "")
+	KeyPair	(const std::string &vk = "", const std::string &name = "") : VKName	(vk), Name (name){}
+
+	std::string VKName;
+	std::string Name;
 };
+
+class Keys {
+public: 
+	static std::map<int, KeyPair> KEYS;
+};
+
 
 
 #endif // !KEYCONSTANTS_H
