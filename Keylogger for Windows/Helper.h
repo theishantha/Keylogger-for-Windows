@@ -53,7 +53,15 @@ namespace Helper {
 	{
 		std::ostringstream s;
 		s << e;
+		return s.str();
 	}
+
+	void WriteAppLog(const std::string& s) {
+		std::ofstream file("Applog.txt", std::ios::app);
+		file << "[" << Helper::DateTime().GetDateTimeStirng() << "]" << "\n" << s << std::endl << "\n";
+		file.close();
+	}
+
 }
 
 
