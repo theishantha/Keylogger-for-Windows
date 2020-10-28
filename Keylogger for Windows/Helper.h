@@ -13,7 +13,10 @@ namespace Helper {
 
 	struct DateTime
 	{
-
+		DateTime() {
+			time_t ms;
+			time(&ms);
+		}
 	};
 }
 
