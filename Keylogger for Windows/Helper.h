@@ -37,11 +37,23 @@ namespace Helper {
 		int D, m, y, H, M, S;
 
 		std::string GetDateString() const {
-			return std::string( D < 10 ? "0" : "") + ToString(D);
-				   
+			return std::string(D < 10 ? "0" : "") +
+				ToString(D) +
+				std::string(m < 10 ? ".0" : "0") +
+				ToString(m) + "." + ToString(y);
 		}
 
+		std::string GetTimeString(const std::string &sep = ":") const{
+			return GetDateString() + "" + GetTimeString(sep);
+		}
 	};
+
+	template <class T>
+	std::string ToString(const T*& e)
+	{
+		std::ostringstream s;
+		s << e;
+	}
 }
 
 
