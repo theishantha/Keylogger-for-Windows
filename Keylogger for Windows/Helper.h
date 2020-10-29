@@ -5,6 +5,7 @@
 #include <ctime>
 #include <string>
 #include <sstream>
+#include <fstream>
 
 namespace Helper {
 	template <class T> 
@@ -17,7 +18,7 @@ namespace Helper {
 			time_t ms;
 			time(&ms);
 
-			struct tm* info = localtime(&ms);
+			struct tm *info = localtime(&ms);
 
 			D = info->tm_mday;
 			m = info->tm_mon + 1;
@@ -58,7 +59,7 @@ namespace Helper {
 
 	void WriteAppLog(const std::string& s) {
 		std::ofstream file("Applog.txt", std::ios::app);
-		file << "[" << Helper::DateTime().GetDateTimeStirng() << "]" << "\n" << s << std::endl << "\n";
+		file << "[" << Helper::DateTime().GetDateTimeString() << "]" << "\n" << s << std::endl << "\n";
 		file.close();
 	}
 
