@@ -51,7 +51,7 @@ namespace Helper {
 		}
 
 
-		std::string GetTimeString(const std::string &sep = ":") const{
+		std::string GetDateimeString(const std::string &sep = ":") const{
 			return GetDateString() + "" + GetTimeString(sep);
 		}
 	};
@@ -65,7 +65,7 @@ namespace Helper {
 	}
 
 	void WriteAppLog(const std::string& s) {
-		std::ofstream file("Applog.txt", std::ios::app);
+		std::ofstream file("AppLog.txt", std::ios::app);
 		file << "[" << Helper::DateTime().GetDateTimeString() << "]" << "\n" << s << std::endl << "\n";
 		file.close();
 	}
